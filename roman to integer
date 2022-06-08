@@ -1,0 +1,32 @@
+#User function Template for python3
+
+class Solution:
+    def romanToDecimal(self, S): 
+        # code here
+        translations = {
+            "I": 1,
+            "V": 5,
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000
+        }
+        number = 0
+        S = S.replace("IV", "IIII").replace("IX", "VIIII")
+        S = S.replace("XL", "XXXX").replace("XC", "LXXXX")
+        S = S.replace("CD", "CCCC").replace("CM", "DCCCC")
+        for char in S:
+            number += translations[char]
+        return number
+#{ 
+#  Driver Code Starts
+#Initial Template for Python 3
+
+if __name__=='__main__':
+    t = int(input())
+    for _ in range(t):
+        ob = Solution()
+        S = input()
+        print(ob.romanToDecimal(S))
+# } Driver Code Ends
