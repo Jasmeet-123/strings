@@ -1,0 +1,34 @@
+#User function Template for python3
+
+class Solution:
+    def findIndex(self,str):
+        # Your code goes here 
+        r=0
+        n=len(str)
+        for i in range(n):
+            if str[i] ==")":
+                r+=1
+        for i in range(n):
+            if r==i:
+                return i
+        
+        return n
+#{ 
+#  Driver Code Starts
+#Initial Template for Python 3
+
+def main():
+
+    T = int(input())
+
+    while(T > 0):
+        str = input()
+        ob=Solution()
+        print(ob.findIndex(str))
+
+        T -= 1
+
+
+if __name__ == "__main__":
+    main()
+# } Driver Code Ends
